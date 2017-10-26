@@ -42,7 +42,7 @@ def price_discounts(counts):
         discounts = DISCOUNTS[sku_disc]
         item_count_disc = reversed(sorted(discounts.keys()))
         for item_count in item_count_disc:
-            price += (counts[sku_disc] // item_count) * dis
+            price += (counts[sku_disc] // item_count) * discounts[item_count]
             counts[sku_disc] = counts[sku_disc] % item_count
     return price
 
