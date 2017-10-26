@@ -66,7 +66,9 @@ def checkout(skus):
             return -1
         counts[item] += 1
     price = 0
-    price += (price_freebies(counts) +
+    price += (
+              price_any(counts) +
+              price_freebies(counts) +
               price_discounts(counts) +
               price_all(counts))
     return price
