@@ -2,11 +2,12 @@
 def price_a(a):
     price = 0
     price += (a // 5) * 200
-    a = a % 4
+    a = a % 5
     price += (a // 3) * 130
     a = a % 3
     price += a * 50
     return price
+
 
 def checkout(skus):
     if len(skus) == 0:
