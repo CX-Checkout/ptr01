@@ -1,7 +1,7 @@
 # noinspection PyUnusedLocal
 import string
 
-PRICE_LIST = [50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 80, 90, 15, 40, 10, 50, 30, 50, 30, 20, 40, 50, 20, 90, 10, 50]
+PRICE_LIST = [50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 70, 90, 15, 40, 10, 50, 30, 50, 20, 20, 40, 50, 20, 90, 10, 50]
 PRICE_LIST = dict(zip(string.ascii_uppercase, PRICE_LIST))
 DISCOUNTS = {
     'A': {5: 200, 3: 130},
