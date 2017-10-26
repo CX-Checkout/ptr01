@@ -1,7 +1,7 @@
 # noinspection PyUnusedLocal
 def checkout(skus):
     if len(skus) == 0:
-        return -1
+        return 0
     counts = {}
     for item in ['A', 'B', 'C', 'D']:
         counts[item] = 0
