@@ -1,4 +1,16 @@
 # noinspection PyUnusedLocal
+import string
+PRICE_LIST = [50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 80, E
+              PRICE_LIST = dict(zip(string.ascii_uppercase, PRICE_LIST))
+DISCOUNTS = {
+    'A': {5: 200, 3: 130},
+    'B': {2: 45},
+    'H': {10: 80, 5: 45},
+    'K': {2: 150},
+    'P': {5: 200},
+    'Q': {3: 80},
+    'V': {3: 130, 2: 90}
+}
 
 FREEBIES ={
     'E': {2: 'B'},
@@ -18,7 +30,7 @@ def price_freebies(counts):
             while (counts[sku_free] >= item_count):
                 counts[sku_free] -= item_count
                 price += item_count * PRICE_LIST[sku_free]
-                counts[target_sku] = (counts[target_sku] - 1) if
+                counts[target_sku] = (counts[target_sku] - 1) if counts[target_sku] > 0 else counts[target_sku]
     return price
 
 def price_discounts(counts):
