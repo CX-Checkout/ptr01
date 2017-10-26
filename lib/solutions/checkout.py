@@ -23,7 +23,7 @@ FREEBIES = {
 
 
 def count_special_any(counts):
-    return sum(map(lambda x: counts[x], ['Z', 'T', 'X', 'Y', 'Z']))
+    return sum(map(lambda x: counts[x], ['Z', 'Y', 'T', 'S', 'X']))
 
 
 def remove_specials(counts):
