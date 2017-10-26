@@ -8,6 +8,15 @@ def price_a(a):
     price += a * 50
     return price
 
+def price_discounts(counts):
+    price = 0
+    for sku_disc in DISCOUNTS.keys():
+        discounts = DISCOUNTS[sku_disc]
+        item_count_disc = reversed(sorted(discounts.keys()))
+        for item_count in item_count_disc:
+            price += (counts[sku_disc] // item_count) * dis
+            counts[sku_disc] = counts[sku_disc] % item_count
+    return price
 
 def price_all(counts):
     price = 0
