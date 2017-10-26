@@ -1,11 +1,24 @@
 # noinspection PyUnusedLocal
-def price_a(a):
+
+FREEBIES ={
+    'E': {2: 'B'},
+    'F': {2: 'F'},
+    'N': {3: 'M'},
+    'R': {3: 'Q'},
+    'U': {3: 'U'}
+}
+
+def price_freebies(counts):
     price = 0
-    price += (a // 5) * 200
-    a = a % 5
-    price += (a // 3) * 130
-    a = a % 3
-    price += a * 50
+    for sku_free in FREEBIES.keys():
+        freebies = FREEBIES[sku_free]
+        item_counts = freebies.keys()
+        for item_count in item_counts:
+            target_sku = freebies[item_count]
+            while (counts[sku_free] >= item_count):
+                counts[sku_free] -= item_count
+                price += item_count * PRICE_LIST[sku_free]
+                counts[target_sku] = (counts[target_sku] - 1) if
     return price
 
 def price_discounts(counts):
