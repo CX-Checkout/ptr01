@@ -21,19 +21,26 @@ FREEBIES = {
     'U': {3: 'U'}
 }
 
+
+def count_special_any(counts):
+    return sum(map(lambda x: counts[x], ['Z', 'T', 'X', 'Y', 'Z']))
+
+
 def remove_specials(counts):
     removed = 0
     for sku in ['Z', 'Y', 'T', 'S', 'X']:
-    while removed < 3 and counts[sku] > 0:
-        counts[sku] -= 1
-        removed +=1
+        while removed < 3 and counts[sku] > 0:
+            counts[sku] -= 1
+            removed += 1
+
 
 def price_any(counts):
     price = 0
-    while count_specia1_any(counts) >= 3:
+    while count_special_any(counts) >= 3:
         remove_specials(counts)
         price += 45
     return price
+
 
 def price_freebies(counts):
     price = 0
@@ -80,8 +87,8 @@ def checkout(skus):
         counts[item] += 1
     price = 0
     price += (
-              price_any(counts) +
-              price_freebies(counts) +
-              price_discounts(counts) +
-              price_all(counts))
+        price_any(counts) +
+        price_freebies(counts) +
+        price_discounts(counts) +
+        price_all(counts))
     return price
