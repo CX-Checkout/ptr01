@@ -21,6 +21,19 @@ FREEBIES = {
     'U': {3: 'U'}
 }
 
+def remove_specials(counts):
+    removed = 0
+    for sku in ['Z', 'Y', 'T', 'S', 'X']:
+    while removed < 3 and counts[sku] > 0:
+        counts[sku] -= 1
+        removed +=1
+
+def price_any(counts):
+    price = 0
+    while count_specia1_any(counts) >= 3:
+        remove_specials(counts)
+        price += 45
+    return price
 
 def price_freebies(counts):
     price = 0
